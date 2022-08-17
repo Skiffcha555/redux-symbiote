@@ -1,0 +1,57 @@
+{
+  "name": "redux-symbiote",
+  "version": "3.0.1",
+  "description": "Write your actions and reducers without pain",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "eslint . && nyc ava",
+    "--types": "rm -rf node_modules && npm i -g dtslint && dtslint types",
+    "types": "dtslint types",
+    "build": "babel ./src -d ./lib",
+    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm run build"
+  },
+  "types": "types",
+  "files": [
+    "lib",
+    "src",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeysova/redux-symbiote.git"
+  },
+  "contributors": [
+    "Sergey Sova <mail@sergeysova.com> (https://sergeysova.com)",
+    "Viacheslav Bereza <mail@betula.co> (http://betula.co)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergeysova/redux-symbiote/issues"
+  },
+  "keywords": [
+    "redux",
+    "flux",
+    "fsa",
+    "actions",
+    "react",
+    "act",
+    "reducer"
+  ],
+  "homepage": "https://github.com/sergeysova/redux-symbiote#readme",
+  "dependencies": {
+    "symbiote-symbol": "^1.1.0"
+  },
+  "devDependencies": {
+    "@atomix/eslint-config": "^6.4.0",
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "ava": "^0.25.0",
+    "coveralls": "^3.0.2",
+    "dtslint": "^0.3.0",
+    "eslint": "^4.19.1",
+    "nyc": "^13.0.1"
+  }
+}

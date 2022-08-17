@@ -1,0 +1,18 @@
+language: node_js
+
+node_js:
+  - 8
+  - 9
+  - 10
+
+sudo: false
+
+script:
+  - npm test
+  - npm i -g dtslint
+  - rm -rf node_modules
+  - npm run types
+
+after_success:
+  - npm install
+  - npm run report
